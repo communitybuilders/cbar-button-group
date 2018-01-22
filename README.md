@@ -2,20 +2,59 @@
 
 
 
-## Install the Polymer-CLI
+`cbar-button-group` is an element that groups buttons together and makes them toggleable as a group, much like a group of radio buttons.
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
+Example:
 
-## Viewing Your Element
-
+<!---
 ```
-$ polymer serve
-```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="cbar-button-group.html">
 
-## Running Tests
-
+    <style is="custom-style">
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+    
+      #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+    
+      cbar-button-group {
+        display: flex;
+        width: 300px;
+        justify-content: space-around;
+      }
+    
+      cbar-button-group button {
+        outline: none;
+      }
+    
+      cbar-button-group button[active] {
+        background-color: #030308;
+        color: #0f0;
+      }
+    </style>
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
 ```
-$ polymer test
+-->
+```html
+<div id="container">
+  <cbar-button-group
+      selected="option 2"
+      attr-for-selected="name"
+      selected-attribute="active">
+    <button name="option 1">Option 1</button>
+    <button name="option 2">Option 2</button>
+    <button name="option 3">Option 3</button>
+  </cbar-button-group>
+</div>
 ```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
