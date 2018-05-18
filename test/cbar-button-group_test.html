@@ -6,10 +6,10 @@
 
     <title>cbar-button-group test</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../../wct-browser-legacy/browser.js"></script>
 
-    <link rel="import" href="../cbar-button-group.html">
+    <script type="module" src="../cbar-button-group.js"></script>
   </head>
   <body>
 
@@ -25,28 +25,29 @@
       </template>
     </test-fixture>
 
-    <script>
-      suite('cbar-button-group', function() {
+    <script type="module">
+import '../cbar-button-group.js';
+suite('cbar-button-group', function() {
 
-        test('instantiating the element with default properties works', function() {
-          var element = fixture('BasicTestFixture');
-          assert.equal(element.prop1, 'cbar-button-group');
-          var elementShadowRoot = element.shadowRoot;
-          var elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello cbar-button-group!');
-        });
+  test('instantiating the element with default properties works', function() {
+    var element = fixture('BasicTestFixture');
+    assert.equal(element.prop1, 'cbar-button-group');
+    var elementShadowRoot = element.shadowRoot;
+    var elementHeader = elementShadowRoot.querySelector('h2');
+    assert.equal(elementHeader.innerHTML, 'Hello cbar-button-group!');
+  });
 
-        test('setting a property on the element works', function() {
-          // Create a test fixture
-          var element = fixture('ChangedPropertyTestFixture');
-          assert.equal(element.prop1, 'new-prop1');
-          var elementShadowRoot = element.shadowRoot;
-          var elementHeader = elementShadowRoot.querySelector('h2');
-          assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
-        });
+  test('setting a property on the element works', function() {
+    // Create a test fixture
+    var element = fixture('ChangedPropertyTestFixture');
+    assert.equal(element.prop1, 'new-prop1');
+    var elementShadowRoot = element.shadowRoot;
+    var elementHeader = elementShadowRoot.querySelector('h2');
+    assert.equal(elementHeader.innerHTML, 'Hello new-prop1!');
+  });
 
-      });
-    </script>
+});
+</script>
 
   </body>
 </html>
