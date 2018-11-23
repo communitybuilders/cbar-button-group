@@ -11,7 +11,7 @@ Example:
 <custom-element-demo>
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="cbar-button-group.html">
+    <script type="module" src="./cbar-button-group.js"></script>
 
     <style is="custom-style">
       html, body {
